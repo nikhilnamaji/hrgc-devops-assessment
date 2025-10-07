@@ -1,0 +1,18 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform backup files
+*.backup
+
+# Sensitive provider credentials
+.terraform/
+*.tfvars
+
+# IDE/editor files
+*.swp
+*.idea/
+.vscode/
