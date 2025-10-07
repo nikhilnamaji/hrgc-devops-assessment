@@ -44,3 +44,12 @@ jobs:
           --set image.repository=nikhilnamaji/hello-app \
           --set image.tag=latest \
           --namespace default
+
+    - name: Deploy Prometheus & Grafana
+      run: |
+        helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+        helm repo add grafana https://grafana.github.io/helm-charts
+        helm repo update
+        kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
+        helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
+          --namespace monitoring            
