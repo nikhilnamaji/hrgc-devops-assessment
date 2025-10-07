@@ -1,1 +1,2 @@
 Flask==2.2.5
+setuptools==78.1.1
