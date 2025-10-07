@@ -52,5 +52,5 @@ jobs:
         helm repo update
         kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
         helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
-          --namespace monitoring
+          --namespace monitoring \
           --set grafana.service.type=LoadBalancer            
