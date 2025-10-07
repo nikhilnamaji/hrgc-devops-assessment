@@ -16,4 +16,4 @@ spec:
         - name: hello-app
           image: nikhilnamaji/hello-app:latest  # GitHub Action will update this dynamically
           ports:
-            - containerPort: 80
+            - containerPort: 8080
