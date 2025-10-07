@@ -38,7 +38,9 @@ jobs:
     - name: Update kubeconfig
       run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.EKS_CLUSTER_NAME }}
 
-    - name: Deploy to EKS
+    - name: Deploy with Helm
       run: |
-        kubectl apply -f ./k8s/deployment.yaml
-        kubectl apply -f ./k8s/service.yaml
+        helm upgrade --install hello-app ./helm/hello-app \
+          --set image.repository=nikhilnamaji/hello-app \
+          --set image.tag=latest \
+          --namespace default
