@@ -25,6 +25,15 @@ jobs:
     - name: Build Docker image
       run: docker build -t nikhilnamaji/hello-app:latest ./app
 
+    # ----- Trivy vulnerability scan -----
+    - name: Scan Docker image with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: nikhilnamaji/hello-app:latest
+        format: 'table'
+        exit-code: 1       # Fail the pipeline if HIGH or CRITICAL vulnerabilities found
+        severity: 'CRITICAL,HIGH'
+
     - name: Push Docker image
       run: docker push nikhilnamaji/hello-app:latest
 
@@ -53,4 +62,4 @@ jobs:
         kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
         helm upgrade --install prometheus prometheus-community/kube-prometheus-stack \
           --namespace monitoring \
-          --set grafana.service.type=LoadBalancer            
+          --set grafana.service.type=LoadBalancer
