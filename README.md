@@ -40,7 +40,8 @@ Before running the pipeline, add the following **secrets and variables** in your
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/<your-username>/hrgc-devops-assessment.git
+git clone https://github.com/nikhilnamaji/hrgc-devops-assessment.git
+
 cd hrgc-devops-assessment/infra
 
 2️⃣ Initialize Terraform
