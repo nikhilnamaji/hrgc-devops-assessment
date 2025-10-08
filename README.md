@@ -132,4 +132,8 @@ kubectl --namespace monitoring get secret prometheus-grafana -o jsonpath="{.data
 📌 Notes
 
 
-Make sure GitHub Actions secrets are correctly configured before pushing any changes to main
+Make sure GitHub Actions secrets are correctly configured before pushing any changes to main.
+
+after it is completed 
+terraform destory 
+i have done terraform destroy and removed all the resources to avoid charges from AWS so currently this pipeline is showing as failed.. 
