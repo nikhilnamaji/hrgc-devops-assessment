@@ -16,30 +16,6 @@ Before starting, make sure you have the following installed and configured:
 - **IAM User** – Terraform will prompt for IAM User ARN and Username during `terraform plan/apply`
 - **GitHub Account** – to set repository secrets
 
----
-
-## 📌 Project Structure
-
-.
-├── app/
-│ ├── app.py
-│ └── requirements.txt
-├── helm/
-│ └── hello-app/
-├── infra/
-│ ├── aws_auth.tf
-│ ├── iam_policies.tf
-│ ├── kubectl_config.tf
-│ ├── eks_module.tf
-│ ├── vpc.tf
-│ ├── providers.tf
-│ ├── variables.tf
-│ └── outputs.tf
-└── .github/workflows/
-└── ci-cd-pipeline.yml
-
-yaml
-Copy code
 
 ---
 
@@ -66,6 +42,7 @@ Before running the pipeline, add the following **secrets and variables** in your
 
 git clone https://github.com/<your-username>/hrgc-devops-assessment.git
 cd hrgc-devops-assessment/infra
+
 2️⃣ Initialize Terraform
 
 terraform init
@@ -73,6 +50,7 @@ terraform init
 3️⃣ Validate Terraform configuration
 
 terraform validate
+
 4️⃣ Plan Terraform changes
 
 terraform plan
